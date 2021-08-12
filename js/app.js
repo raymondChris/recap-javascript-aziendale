@@ -162,3 +162,5 @@ console.log("value ", value);
 
 // const newValue = Math.floor(3.2);
 // console.log(newValue);
+
+console.log("ciao");
