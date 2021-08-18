@@ -101,31 +101,31 @@ const addNumber = (result) => {}; //corpo della funzione
 // console.log("result arrow ", value);
 
 // //Class
-class Person {
-  userName = "";
-  age = 0;
-  constructor(userName, age) {
-    this.userName = userName;
-    this.age = age;
-  }
+// class Person {
+//   userName = "";
+//   age = 0;
+//   constructor(userName, age) {
+//     this.userName = userName;
+//     this.age = age;
+//   }
 
-  showname() {
-    // return this.userName;
-    console.log("Welcome! ", this.userName);
-  }
+// showname() {
+// return this.userName;
+//     console.log("Welcome! ", this.userName);
+//   }
 
-  static showMessage = function () {
-    console.log("Hi there!!!!");
-  };
-}
+//   static showMessage = function () {
+//     console.log("Hi there!!!!");
+//   };
+// }
 
-const user = new Person("Ray", 32);
+// const user = new Person("Ray", 32);
 // console.log("user ", user);
-user.showname();
-Person.showMessage();
+// user.showname();
+// Person.showMessage();
 
-const value = Math.floor(32.4);
-console.log("value ", value);
+// const value = Math.floor(32.4);
+// console.log("value ", value);
 
 // class Employer extends Person {
 //   salary = 0;
@@ -163,4 +163,85 @@ console.log("value ", value);
 // const newValue = Math.floor(3.2);
 // console.log(newValue);
 
-console.log("ciao");
+// console.log("ciao");
+
+//Arrow function
+
+// const greetings = () => {
+//   console.log("Hi!");
+// };
+
+// function greetings() {
+//   return (function () {
+//     console.log("Hi!");
+//   })();
+// }
+
+// const greetFunc = greetings;
+// greetFunc();
+
+// greetings();
+// const username = "Raymond";
+// const greetMessage = `Welcome! ${username}`;
+// console.log(greetMessage);
+
+console.log("Chiedo soldi alla mamma");
+
+const yesButton = document.getElementById("yes");
+const noButton = document.getElementById("no");
+
+// const noAnswerHandler = () => {
+//   console.log("La mamma non mi ha dato i soldi");
+// };
+
+// yesButton.addEventListener("click", function(callback) {
+
+// });
+
+// noButton.addEventListener("click", noAnswerHandler);
+
+// const momAnswer = new Promise((res, rej) => {
+
+// })
+
+// Callback OLD METHOD
+// const momAnswer = (cb) => {
+//   setTimeout(() => {
+//     cb();
+//   }, 2000);
+// };
+
+console.log("waiting for answer...");
+// momAnswer(() => {
+//   console.log("La mamma mi ha dato i soldi");
+// });
+
+// Promise
+const momAnswer = () => {
+  const promiseAnswer = new Promise((res, rej) => {
+    setTimeout(() => {
+      res("La mamma mi ha dato i soldi!!!!");
+    }, 4000);
+  });
+  return promiseAnswer;
+};
+
+// then catch
+// momAnswer()
+//   .then((resp) => {
+//     console.log(resp);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// try catch
+const waitAnswer = async () => {
+  try {
+    const resp = await momAnswer();
+    console.log(resp);
+  } catch (err) {
+    console.log(err);
+  }
+};
+waitAnswer();
